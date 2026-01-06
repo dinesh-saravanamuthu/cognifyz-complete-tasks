@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Cognifyz Technologies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="gallery.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="asset/cognifyz-1.png" alt="Cognifyz Logo" class="logo">
+            <span class="brand-name">Cognifyz Technologies</span>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="/carousel.html" class="nav-link">Courses</a></li>
+                <li><a href="basic-cal.html" class="nav-link">Calculator</a></li>
+                <li><a href="login.html" class="nav-btn">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2 class="title">  Gallery</h2>
+
+            <div class="phot-gallery">
+                <div class="Photo"><img src="/asset/g1.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g2.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g3.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g4.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g5.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g6.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g7.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g8.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g9.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g10.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g11.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g12.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g4.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g5.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g6.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g14.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g15.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g3.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g7.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g8.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g1.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g2.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g3.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g4.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g5.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g6.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g7.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g8.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g9.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g10.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g11.jpeg" alt=""></div>
+                <div class="Photo"><img src="/asset/g12.jpeg" alt=""></div>
+            </div>
+        </div>
+    </main>
+
+    </main>
+
+    <div id="lightbox">
+        <button class="close-btn">&times;</button>
+        <img src="" alt="Full view">
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const closeBtn = document.querySelector('.close-btn');
+        const photos = document.querySelectorAll('.Photo');
+
+        photos.forEach(photo => {
+            photo.addEventListener('click', () => {
+                const img = photo.querySelector('img');
+                if (img) {
+                    lightboxImg.src = img.src;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        };
+
+        closeBtn.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Dinesh All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
